@@ -1,0 +1,119 @@
+/* Globals */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #3498db;
+  --main-font: "Lato", serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bar */
+.bar {
+  border: 1px solid var(--black);
+  border-radius: 5rem;
+  width: 90%;
+  height: 5rem;
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bar .search,
+.bar .menu {
+  width: 2.8rem;
+  margin: 0 1.6rem;
+}
+
+.bar input {
+  width: 100%;
+  font-size: 1.8rem;
+  border: none;
+}
+
+.bar input:focus {
+  outline: none;
+}
+
+/* Content */
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.card .gif {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+}
+
+.card .creator {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+}
+
+.creator img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+}
+
+.creator p {
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--white);
+}
