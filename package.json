@@ -1,0 +1,24 @@
+{
+  "name": "gif-search",
+  "version": "1.0.0",
+  "description": "gif search web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandroch1202/gif-search.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Alejandro Chavez <alejandrochavez1202@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alejandroch1202/gif-search/issues"
+  },
+  "homepage": "https://github.com/alejandroch1202/gif-search#readme"
+}
