@@ -1,4 +1,4 @@
-# gif-search
+# GiFinder
 
 ## Build and deploy command
 
