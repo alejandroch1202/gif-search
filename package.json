@@ -1,14 +1,14 @@
 {
-  "name": "gif-search",
+  "name": "gifinder",
   "version": "1.0.0",
-  "description": "gif search web app",
-  "main": "index.js",
+  "description": "gifinder web app",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alejandroch1202/gif-search.git"
+    "url": "git+https://github.com/alejandroch1202/gifinder.git"
   },
   "keywords": [
     "html",
@@ -18,7 +18,7 @@
   "author": "Alejandro Chavez <alejandrochavez1202@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alejandroch1202/gif-search/issues"
+    "url": "https://github.com/alejandroch1202/gifinder/issues"
   },
-  "homepage": "https://github.com/alejandroch1202/gif-search#readme"
+  "homepage": "https://github.com/alejandroch1202/gifinder#readme"
 }

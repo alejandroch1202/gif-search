@@ -1,7 +1,8 @@
 import { API_VERSION, GIPHY_API, GIPHY_API_KEY } from "./config.js";
+
 const LIMIT = 25;
-const content = document.querySelector(".content");
 const input = document.querySelector("#input");
+const content = document.querySelector(".content");
 const backspace = document.querySelector(".backspace");
 
 backspace.addEventListener("click", clearText);
@@ -14,34 +15,36 @@ input.addEventListener("input", () => {
 
 let search = `${GIPHY_API}/${API_VERSION}/gifs/trending?api_key=${GIPHY_API_KEY}&limit=${LIMIT}&rating=g`;
 
+function clean() {
+  content.innerHTML = ``;
+}
+
 function clearText() {
   input.value = "";
   handleInput();
-}
-
-function handleInput() {
-  let inputText = input.value;
-  inputText = inputText.replaceAll(" ", "+");
-  if (input.value.length) {
-    backspace.classList.remove("inactive");
-  } else {
-    backspace.classList.add("inactive");
-  }
-  if (inputText.length > 2) {
-    search = `${GIPHY_API}/${API_VERSION}/gifs/search?api_key=${GIPHY_API_KEY}&q=${inputText}&limit=${LIMIT}&rating=g&lang=en`;
-  } else {
-    search = `${GIPHY_API}/${API_VERSION}/gifs/trending?api_key=${GIPHY_API_KEY}&limit=${LIMIT}&rating=g`;
-  }
-}
-
-function clean() {
-  content.innerHTML = ``;
 }
 
 async function fetchData(endpoint) {
   const response = await fetch(endpoint);
   const data = await response.json();
   return data;
+}
+
+function handleInput() {
+  let inputText = input.value;
+  inputText = inputText.replaceAll(" ", "+");
+
+  if (input.value.length) {
+    backspace.classList.remove("inactive");
+  } else {
+    backspace.classList.add("inactive");
+  }
+
+  if (inputText.length > 2) {
+    search = `${GIPHY_API}/${API_VERSION}/gifs/search?api_key=${GIPHY_API_KEY}&q=${inputText}&limit=${LIMIT}&rating=g&lang=en`;
+  } else {
+    search = `${GIPHY_API}/${API_VERSION}/gifs/trending?api_key=${GIPHY_API_KEY}&limit=${LIMIT}&rating=g`;
+  }
 }
 
 async function render() {
