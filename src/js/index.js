@@ -1,6 +1,6 @@
 import { API_VERSION, GIPHY_API, GIPHY_API_KEY } from "./config.js";
 
-const LIMIT = 25;
+const LIMIT = 15;
 const input = document.querySelector("#input");
 const content = document.querySelector(".content");
 const backspace = document.querySelector(".backspace");
