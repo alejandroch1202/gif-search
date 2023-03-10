@@ -93,6 +93,7 @@ nav a img {
   border: 1px solid var(--black);
   border-radius: 5rem;
   width: 100%;
+  max-width: 100rem;
   height: 5rem;
   margin: 3rem 0;
   display: flex;

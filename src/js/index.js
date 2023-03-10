@@ -1,5 +1,5 @@
 import { API_VERSION, GIPHY_API, GIPHY_API_KEY } from "./config.js";
-const LIMIT = 10;
+const LIMIT = 25;
 const content = document.querySelector(".content");
 const input = document.querySelector("#input");
 const backspace = document.querySelector(".backspace");
@@ -53,27 +53,29 @@ async function render() {
     node.innerHTML = `
         
     <div class="card">
-        <img
-            loading="lazy"
-            class="gif"
-            src=${gif.images?.fixed_height.url}
-            alt="${gif.title}"
-        />
-        <div class="creator">
-            <img
-                src="${
-                  gif.user
-                    ? gif.user.avatar_url
-                    : "https://www.svgrepo.com/show/507440/user.svg"
-                }"
-                alt="${gif.username}"
-            />
-            <p>${gif.username ? gif.username : "user"}</p>
-        </div>
-    </div>
+    <a target="_blank" href="${gif.url}""">
+      <img
+          loading="lazy"
+          class="gif"
+          src=${gif.images?.fixed_height.url}
+          alt="${gif.title}"
+      />
+      <div class="creator">
+          <img
+              src="${
+                gif.user
+                  ? gif.user.avatar_url
+                  : "https://www.svgrepo.com/show/507440/user.svg"
+              }"
+              alt="${gif.username}"
+          />
+          <p>${gif.username ? gif.username : "user"}</p>
+      </div>
+  </div>
+    
+    </a>
     
         `;
-
     content.appendChild(node);
   });
 }
