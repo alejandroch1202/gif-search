@@ -2,7 +2,11 @@ import { API_VERSION, GIPHY_API, GIPHY_API_KEY } from "./config.js";
 const LIMIT = 10;
 const content = document.querySelector(".content");
 const input = document.querySelector("#input");
-const userInput = input.addEventListener("input", () => {
+const backspace = document.querySelector(".backspace");
+
+backspace.addEventListener("click", clearText);
+
+input.addEventListener("input", () => {
   clean();
   handleInput();
   render();
@@ -10,9 +14,19 @@ const userInput = input.addEventListener("input", () => {
 
 let search = `${GIPHY_API}/${API_VERSION}/gifs/trending?api_key=${GIPHY_API_KEY}&limit=${LIMIT}&rating=g`;
 
+function clearText() {
+  input.value = "";
+  handleInput();
+}
+
 function handleInput() {
   let inputText = input.value;
   inputText = inputText.replaceAll(" ", "+");
+  if (input.value.length) {
+    backspace.classList.remove("inactive");
+  } else {
+    backspace.classList.add("inactive");
+  }
   if (inputText.length > 2) {
     search = `${GIPHY_API}/${API_VERSION}/gifs/search?api_key=${GIPHY_API_KEY}&q=${inputText}&limit=${LIMIT}&rating=g&lang=en`;
   } else {
@@ -40,6 +54,7 @@ async function render() {
         
     <div class="card">
         <img
+            loading="lazy"
             class="gif"
             src=${gif.images?.fixed_height.url}
             alt="${gif.title}"
